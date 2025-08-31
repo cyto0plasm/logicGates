@@ -1,0 +1,537 @@
+/* --reset-- */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(248, 248, 248);
+}
+
+/* ------scroll bar------ */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* -----selection-----*/
+::selection {
+  background-color: #75d8bc;
+  color: #273430;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #75d8bc;
+}
+
+/* ---------------- */
+.hr {
+  background-color: #98a3a3;
+  height: 1px;
+  width: 70%;
+  margin: 2rem auto;
+}
+
+/* -------------------NAVBAR------------------- */
+
+#nav {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* #search-input {
+    max-width: 12rem;
+} */
+
+/* ----------- menu ----------- */
+#mobile-btn {
+  width: 2rem;
+  height: 5rem;
+}
+
+#mobile-menu {
+  transition: scale 0.3s ease;
+}
+
+#mobile-menu {
+  position: absolute;
+  right: 0rem;
+  top: 99px;
+  background-color: #273430;
+  max-width: 300px;
+  padding: 0px 1rem 0.5rem 0px;
+  text-align: right;
+
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#mobile-menu.show {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#mobile-menu a {
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out;
+  transform: translateX(20px);
+}
+
+#mobile-menu.show a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* navbar buttons hover,underline*/
+#nav-btns a {
+  color: rgb(213, 228, 228);
+}
+
+#nav-btns a:hover,
+#nav-btns a:focus {
+  color: rgb(135, 232, 202);
+
+  bottom: -1;
+  transition: all 0.5s;
+}
+
+#nav-btns :not(a:hover),
+#nav-btns a:focus {
+  transition: all 0.4 ease-out;
+}
+
+#nav-btns a:active {
+  color: rgb(123, 138, 139);
+  scale: 1.15;
+  transition: all 0.1 ease-in;
+}
+
+#nav-btns a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #44b699;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+#nav-btns a:hover::after {
+  opacity: 1;
+}
+
+#nav-btns a:active::after {
+  background-color: #75d8bc;
+}
+
+#nav-btns a:focus::after {
+  opacity: 1;
+}
+
+#search-input {
+  top: 100px;
+}
+
+/* -------- nav search --------*/
+/* -------input------- */
+#search input::placeholder {
+  text-indent: 1rem;
+}
+
+#search input {
+  width: 190px;
+  height: 35px;
+  /* margin-top: 8px; */
+  border: #ffffff 0.1rem solid;
+  border-radius: 10px;
+  /*  */
+}
+
+#search input:focus {
+  width: 210px;
+  height: 40px;
+  transition: all 0.2s;
+  transform-origin: 50% 50%;
+  border: #75d8bc 0.15rem solid;
+  outline: none;
+}
+
+/* --------icon-------- */
+#search button img {
+  width: 35px;
+}
+
+#search button img:hover {
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+#search button img:not(:hover) {
+  transition: all 0.2s ease-out;
+}
+
+#search button img:active {
+  width: 35px;
+  transition: all 0.1s;
+}
+
+#search-btn {
+  width: 4rem;
+  height: 5rem;
+}
+
+/* -----------Menu----------- */
+div#menu {
+  width: 70px;
+  text-align: center;
+}
+
+#menu button {
+  width: 35px;
+}
+
+#menu button:hover {
+  width: 39px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+#menu button:not(:hover) {
+  transition: all 0.2s ease-out;
+}
+
+#menu button:active {
+  width: 35px;
+  transition: all 0.1s;
+}
+
+/* ----body start---- */
+#sec {
+  /* margin-inline: 30%; */
+  border-top: #75d8bc 1rem solid;
+  border-image: linear-gradient(to right, #75d8bc 50%, #f8e0d1 50%) 1;
+  align-items: center;
+  margin: 1.5rem auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#body {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+}
+
+#cpu-contant img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#card-contant p {
+  margin-top: 0.5rem;
+}
+
+#borg {
+  /*     background-color: rgb(247, 247, 247);
+ */
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 400px;
+  margin: 10px auto;
+}
+
+#borg img {
+  border-radius: 15px;
+  max-height: 400px;
+}
+
+#borg a {
+  color: rgb(135, 232, 202);
+  background-color: #273430;
+  padding: 0.8rem 0.6rem;
+  margin-inline: 10%;
+  display: inline-block;
+  /*     margin: 0 1.5rem .8rem;
+ */
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#borg a:hover {
+  color: #273430;
+  background-color: rgb(135, 232, 202);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.23s ease-in-out;
+}
+
+.rate {
+  height: 46px;
+  padding: 0 10px;
+  align-self: center;
+}
+
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+#tags {
+  margin-bottom: 5rem;
+}
+
+#tags li {
+  list-style: circle;
+  text-decoration: underline;
+  font-size: 20px;
+  color: #273430;
+}
+
+#tags a:visited {
+  color: rgb(105, 41, 105);
+}
+
+#tags a:hover {
+  color: #4ea590;
+}
+
+#tags a:active {
+  color: rgb(162, 162, 82);
+}
+
+/* ----------Footer---------- */
+#social a:hover {
+  opacity: 50%;
+  transition: all 0.6 ease;
+}
+
+#social a:focus {
+  opacity: 70%;
+  transition: all 0.6 ease;
+}
+#project_image {
+  animation: projectMotion 1.5s ease-out;
+}
+@keyframes projectMotion {
+  0% {
+    transform: translateY(0px) scale(0.8); /* start lower + smaller */
+  }
+  50% {
+    transform: translateY(50px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0px) scale(1); /* start lower + smaller */
+  }
+}
+
+/* Main container */
+#content_imgs,
+#history,
+#modern {
+  /* transition: all 1s ease-in-out; */
+}
+#content_imgs {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "box1 box1 box2"
+    "box1 box1 box2";
+  gap: 10px;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+#content_imgs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+#content_imgs img:hover {
+  transform: rotateY(10deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+#history,
+#modern {
+  perspective: 2500px; /* adjust depth */
+}
+
+#history img,
+#modern img {
+  transition: transform 0.3s ease-in;
+  transform-style: preserve-3d;
+}
+
+#history img:hover,
+#modern img:hover {
+  transform: rotateY(10deg);
+}
+
+/* History section */
+#history {
+  display: grid;
+  grid-template-areas:
+    "img1 img1 img2"
+    "img1 img1 img3";
+  gap: 10px;
+}
+
+/* Pin image (the floating 4th image inside history) */
+#pin-img {
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  z-index: 1;
+  border-radius: 35%;
+  overflow: visible;
+}
+#pin-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#pin-img::after {
+  content: "";
+  background-image: url(../dist/img/pin.png);
+  background-repeat: no-repeat; /* Prevents repeating */
+  background-size: cover; /* Resizes the background image to cover the entire container */
+  background-position: center; /* Centers the background image */
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 35px;
+  height: 35px;
+  rotate: -10deg;
+  /* border-radius: 50%; */
+  /* background: linear-gradient(270deg, rgb(207, 207, 207), rgb(147, 147, 147)); */
+}
+
+/* Modern section */
+#modern .mobile-only {
+  display: none;
+}
+#modern {
+  display: grid;
+  grid-template-areas:
+    "img1 img2"
+    "img3 img4";
+  gap: 10px;
+}
+#modern img {
+  width: 300px;
+}
+#modern img:nth-child(1) {
+  height: 185px;
+}
+#modern img:nth-child(2) {
+  height: 220px;
+}
+#modern img:nth-child(3) {
+  height: 180px;
+  object-fit: cover;
+  transform: scale(0.5) translateX(20px);
+  transform-origin: center;
+}
+#modern img:nth-child(4) {
+  height: 150px;
+}
+
+@media (max-width: 1024px) {
+  #content_imgs {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "box1 box1"
+      "box2 box2";
+  }
+
+  #modern img {
+    visibility: hidden;
+    display: none;
+  }
+  #project_image {
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #content_imgs {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "box1"
+      "box2";
+  }
+  #modern {
+    display: block; /* no grid */
+  }
+
+  #modern img {
+    display: none; /* hide all */
+  }
+
+  #modern .mobile-only {
+    display: none; /* show only the mobile one */
+    width: 100%;
+    height: 310px;
+    object-fit: fill;
+  }
+  #study {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #project_image {
+    width: 200px !important;
+    transform: translateX(-30px);
+    transition: all 0.5s ease-in-out;
+  }
+  #borg {
+    width: 90%;
+  }
+}
+
+.img-card {
+  border-radius: 12px;
+  cursor: default;
+}
