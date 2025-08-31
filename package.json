@@ -22,6 +22,8 @@
   "homepage": "https://github.com/cyto0plasm/logic-gates-team#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.12",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12"
   },
   "dependencies": {
