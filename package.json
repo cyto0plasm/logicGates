@@ -1,0 +1,27 @@
+{
+  "name": "logicgates",
+  "version": "1.0.0",
+  "description": "Logic Gates Learning Kit Website built with native HTML CSS JS and tailwind",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyto0plasm/logic-gates-team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyto0plasm/logic-gates-team/issues"
+  },
+  "homepage": "https://github.com/cyto0plasm/logic-gates-team#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}

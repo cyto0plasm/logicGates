@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates</title>
+    <script src="/docs/pages/components/component.js"></script>
+  </head>
+  <body>
+    <!--------------- navbar Start --------------->
+    <script src="../component.js"></script>
+
+    <my-header></my-header>>
+
+    <!--------------- navbar End --------------->
+    <!--------------- body Start --------------->
+    <div class="container mx-auto">
+      <section
+        id="sec"
+        class="mx-auto flex flex-col lg:w-[70%] md:w-[90%] sm:w-[95%]"
+      >
+        <h1 class="text-[40px] font-bold my-3 text-center">AND</h1>
+        <!------------ definition ------------>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          An XNOR gate is a specially designed logic gate having only two inputs
+          and one output. The output of the XNOR gate is logic 1 when both the
+          inputs are logic 1 or logic 0. In other words, the output of the XNOR
+          gate is logic 1 when both the inputs are the same. For dissimilar
+          inputs, the output of the XNOR gate is logic 0. Hence, the XNOR gate
+          is used to implement similarity checker circuits.
+        </p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          We can design an XNOR gate by combining two logic gates namely, the
+          XOR gate and the NOT gate. Hence, we can state that
+        </p>
+
+        <div
+          class="mx-auto w-[50%] h-auto px-5 py-5 bg-slate-100 shadow-lg rounded-sm"
+        >
+          <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+            XNOR Gate = XOR Gate + NOT Gate
+          </p>
+        </div>
+
+        <div class="hr"></div>
+
+        <!------------- diagram ------------->
+
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Symbol
+        </h2>
+        <img
+          class="mx-auto"
+          width="400px"
+          src="../../img/Gates/g/XNOR.png"
+          alt="Diagram"
+        />
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          The logic symbol of an XNOR gate is depicted in the following figure.
+          It has two inputs represented by A and B, and one output line
+          represented by X.
+        </p>
+
+        <!--         <div class="hr"></div>
+ -->
+        <!------------ Circuit ------------>
+        <!-- <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          JK Flip-Flop Circuit
+        </h2>
+
+        <div class="flex justify-center">
+          <img
+            class="my-2 w-[32rem]"
+            src="/img/Gates/flip-flop/JK-FLIP-FLOP-Diagram1.png"
+            alt="Circuit"
+          />
+        </div>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          JK Flip Flop is an improved version of SR flip flop where the
+          undefined state of SR Flip Flop is eliminated by providing feedback
+        </p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          In a circuit “set”, the bottom NAND gate interrupts the J input coming
+          from the “0” position of Q’. In the “RESET” state, the top NAND gate
+          interrupts the K input coming from the 0 positions of Q. We can use Q
+          and Q’ to control the input because they are always different. The
+          flip flop is toggled according to the truth table when both inputs “J”
+          and “K” are set to 1.
+        </p> -->
+
+        <!-- ---------Truth Table--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Truth Table
+        </h2>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+          <table
+            class="w-[600px] mx-auto text-center text-[25px] text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-[30px] text-gray-700 uppercase dark:text-gray-400"
+            >
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  A
+                </th>
+                <th scope="col" class="px-6 py-3 text-white dark:bg-gray-700">
+                  B
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  Output
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-500">
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          The truth table is a logical table that shows the relationship between
+          inputs and output of an XNOR gate and provides information about the
+          operation of the gate. In XNOR gate the Output is high (1) when both
+          inputs are same(either both 0 or both 1), and low (0) when the inputs
+          are different.
+        </p>
+
+        <!-- ---------Equation--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Equation
+        </h2>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          The following is the boolean expression of the XNOR gate, :
+        </p>
+
+        <h3 class="text-[1.2rem] text-center bg-slate-300 my-4">X = A ⊙ B</h3>
+
+        <div class="hr"></div>
+        <!--       ------ apply the gate on the device------ -->
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          how to apply the gate on the device
+        </h2>
+        <img src="" alt="" />
+        <p></p>
+      </section>
+    </div>
+
+    <!--------------- body End --------------->
+
+    <!-- -----------Footer Start----------- -->
+    <!-- Names Start-------------- -->
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+    <!-- -----------Footer End----------- -->
+
+    <script src="/docs/scripts/script.js"></script>
+  </body>
+</html>

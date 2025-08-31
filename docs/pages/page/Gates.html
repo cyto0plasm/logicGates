@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="stylesheet" href="/docs/pages/Gates.css" />
+    <!-- <script src="../../../flowbite.js"></script>
+    <script src="../../../tailwind.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+      integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates/Gates</title>
+  </head>
+  <body>
+    <!--------------- navbar Start --------------->
+    <script src="/docs/pages/components/component.js"></script>
+
+    <my-header></my-header>
+
+    <!--------------- navbar End --------------->
+    <!--------------- body Start --------------->
+    <section id="sec" class="flex flex-col lg:w-[70%] md:w-[90%] sm:w-[95%]">
+      <video
+        class="mx-auto mt-[1rem] mb-[2rem]"
+        src="../../assets/img/Still Here - Season 2024 Cinematic - League of Legends (ft. Forts, Tiffany Aris, and 2WEI).mp4"
+        controls
+        muted
+        width="98%"
+      ></video>
+      <div class="hr"></div>
+      <h1 class="text-[2rem] font-bold text-center">
+        Before yo go ahead and Navigate Thruogh Logic Gates please understand...
+      </h1>
+      <ul class="">
+        <li class="text-[1.5rem] mx-[4rem] mt-[1rem] mb-[2rem]">
+          <span class="font-bold">Inputs:</span> All logic gates require some
+          kind of input value so that they have numbers to compare. These
+          figures come in the form of voltages. When your input voltage is 0V,
+          then it's considered to be low, or 0. And when you have a voltage of
+          5V as an input, then this is deemed to be high, or 1.
+        </li>
+        <li class="text-[1.5rem] mx-[4rem] mt-[1rem] mb-[2rem]">
+          <span class="font-bold">Outputs:</span> Once a logic gate has a chance
+          to process your input, it can then make a decision on whether to open
+          its gate or keep it closed. This output is entirely determined by the
+          type of logic gate you're using, and some will only open if you have
+          two high voltages as an input, whereas others will only open if you
+          have a low voltage but not a high voltage as an input.
+        </li>
+      </ul>
+      <div class="hr"></div>
+      <div id="gates" class="flex flex-wrap justify-around">
+        <div id="AND">
+          <a href="/docs/pages/gates/AND.html"
+            ><img src="../../assets/img/Gates/and.png" alt="AND Gate" />AND
+            Gate</a
+          >
+        </div>
+        <div id="NAND">
+          <a href="/docs/pages/gates/NAND.html"
+            ><img src="../../assets/img/Gates/nand.png" alt="NAND Gate" />NAND
+            Gate</a
+          >
+        </div>
+        <div id="OR">
+          <a href="/docs/pages/gates/OR.html"
+            ><img src="../../assets/img/Gates/or.png" alt="OR Gate" />OR Gate</a
+          >
+        </div>
+        <div id="XOR">
+          <a href="/docs/pages/gates/XOR.html"
+            ><img src="/docs/assets/img/Gates/xor.png" alt="XOR Gate" />XOR
+            Gate</a
+          >
+        </div>
+        <div id="NOR">
+          <a href="/docs/pages/gates/NOR.html">
+            <img src="../../assets/img/Gates/nor.png" alt="NOR Gate" />NOR
+            Gate</a
+          >
+        </div>
+        <div id="XNOR">
+          <a href="/docs/pages/gates/XNOR.html"
+            ><img src="../../assets/img/Gates/xnor.png" alt="XNOR Gate" />XNOR
+            Gate</a
+          >
+        </div>
+        <div id="NOT">
+          <a href="/docs/pages/gates/NOT.html">
+            <img src="../../assets/img/Gates/not.png" alt="NOT Gate" />NOT
+            Gate</a
+          >
+        </div>
+        <div id="FULL-ADDER">
+          <a href="/docs/pages/gates/FULL-ADDER.html"
+            ><img
+              src="/docs/assets/img/Gates/full-adder.png"
+              alt="FULL-ADDER Gate"
+            />FULL-ADDER Gate</a
+          >
+        </div>
+        <div id="D-f-f">
+          <a href="/docs/pages/gates/D-F-F.html"
+            ><img src="../../assets/img/Gates/d-f-f.png" alt="D FLIP-FLOP" /> D
+            FLIP-FLOP</a
+          >
+        </div>
+        <div id="jk-f-f">
+          <a href="/docs/pages/gates/JK-F-F.html"
+            ><img
+              src="../../assets/img/Gates/jk-f-f.png"
+              alt="JK FLIP-FLOP"
+            />JK FLIP-FLOP</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!--------------- body End --------------->
+
+    <!-- -----------Footer Start----------- -->
+    <!-- Names Start-------------- -->
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+    <!-- -----------Footer End----------- -->
+  </body>
+  <script src="/docs/scripts/script.js"></script>
+</html>

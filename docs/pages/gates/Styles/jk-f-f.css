@@ -1,0 +1,35 @@
+/* --reset-- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#sec table {
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+#sec td,
+tr,
+th {
+    border: 1px black solid;
+}
+
+#sec th {
+    width: 140px;
+    background-color: #4d5452;
+    color: white;
+}
+
+#sec ul {
+    list-style: circle;
+}
+
+#sec li {
+    margin: 1rem 2rem;
+}
+
+#sec h2:hover {
+    background-color: slategray;
+}

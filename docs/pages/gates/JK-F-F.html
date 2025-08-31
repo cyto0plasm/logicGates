@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates</title>
+    <script src="/docs/pages/components/component.js"></script>
+  </head>
+  <body>
+    <!--------------- navbar Start --------------->
+    <script src="../component.js"></script>
+
+    <my-header></my-header>>
+
+    <!--------------- navbar End --------------->
+    <!--------------- body Start --------------->
+    <div class="container mx-auto">
+      <section
+        id="sec"
+        class="mx-auto flex flex-col lg:w-[70%] md:w-[90%] sm:w-[95%]"
+      >
+        <h1 class="text-[40px] font-bold my-3 text-center">JK FLIP-FLOP</h1>
+        <!------------ definition ------------>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          It is one kind of sequential logic circuit which stores binary
+          information in bitwise manner. It consists of two inputs and two
+          outputs. Inputs are Set(J) & Reset(K) and their corresponding outputs
+          are Q and Q’. JK flipflop has two modes of operation which are
+          synchronous mode and asynchronous mode. In synchronous mode, the state
+          will be changed with the clock(clk) signal, and in asynchronous mode,
+          the change of state is independent from its clock signal. Let’s see
+          its diagram structure.
+        </p>
+        <div class="hr"></div>
+
+        <!------------- diagram ------------->
+        <div>
+          <h2
+            class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+          >
+            Diagram
+          </h2>
+          <img
+            class="mx-auto"
+            width="400px"
+            src="../../img/Gates/flip-flop/JK-Flip-Flop diagram.png"
+            alt="Diagram"
+          />
+          <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+            The JK flip flop diagram above represents the basic structure which
+            consists of Clock (CLK), Clear (CLR), and Preset (PR).
+          </p>
+        </div>
+        <div class="hr"></div>
+        <!------------ Circuit ------------>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          JK Flip-Flop Circuit
+        </h2>
+
+        <div class="flex justify-center">
+          <img
+            class="my-2 w-[32rem]"
+            src="../../img/Gates/flip-flop/JK-FLIP-FLOP-Diagram1.png"
+            alt="Circuit"
+          />
+        </div>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          JK Flip Flop is an improved version of SR flip flop where the
+          undefined state of SR Flip Flop is eliminated by providing feedback
+        </p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          In a circuit “set”, the bottom NAND gate interrupts the J input coming
+          from the “0” position of Q’. In the “RESET” state, the top NAND gate
+          interrupts the K input coming from the 0 positions of Q. We can use Q
+          and Q’ to control the input because they are always different. The
+          flip flop is toggled according to the truth table when both inputs “J”
+          and “K” are set to 1.
+        </p>
+
+        <!-- ---------Truth Table--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Truth Table
+        </h2>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+          <table
+            class="w-[600px] mx-auto text-center text-[25px] text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-[30px] text-gray-700 uppercase dark:text-gray-400"
+            >
+              <tr>
+                <th class="px-6 py-3 font-medium text-white dark:bg-gray-700">
+                  J
+                </th>
+                <th class="px-6 py-3 font-medium text-white dark:bg-gray-700">
+                  K
+                </th>
+                <th class="px-6 py-3 font-medium text-white dark:bg-gray-700">
+                  Q
+                </th>
+                <th class="px-6 py-3 font-medium text-white dark:bg-gray-700">
+                  Q(N+1)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-500">
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="text-[1.2rem] px-[1.2rem] text-justify">
+          <li>
+            D is the input, and Q is current state, Qn + 1 is the next state
+            outputs.
+          </li>
+          <li>
+            Q(n+1) will always be zero when D is 0, irrespective of current
+            state of flip flop.
+          </li>
+          <li>
+            When the input of the flip flop is 1, next state of flip flop will
+            always be 1, regardless of the current state of flip flop.
+          </li>
+        </ul>
+        <div class="hr"></div>
+        <!-- ----------K-Map---------- -->
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          K-Map
+        </h2>
+        <div class="w-full flex justify-center">
+          <img
+            src="../../img/Gates/flip-flop/JK-Flip-Flop-K-Map.webp"
+            class="w-[600px] mb-3"
+            alt="K-Map"
+          />
+        </div>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          From the K-map you get 2 pairs. On solving both we get the following
+          characteristic equation:
+        </p>
+        <p class="text-[1.3rem] text-center bg-slate-300 my-4">
+          Q(n+1) = JQn’ + K’Qn
+        </p>
+        <!-- ---------Equation--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Equation
+        </h2>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          The characteristic equation of JK Flip Flop depicts the relationship
+          between the current state (Q(n)), the inputs (J and K), and the next
+          state (Q(n+1)). Here's the characteristic equation of JK Flip Flop:
+        </p>
+
+        <h3 class="text-[1.2rem] text-center bg-slate-300 my-4">
+          Q(n+1) = JQ̅(n) + QK̅(n)
+        </h3>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          In this equation, the term JQ̅(t) represents the effect of the J input
+          when it is in the set state (J=1), and K̅(t) signifies the effect of
+          the K input when it is reset (K=0). The term QK̅(t) represents the
+          effect of the K input when it is in the set state (K=1), and Q̅(t)
+          signifies the complement of the current state.
+        </p>
+        <div class="hr"></div>
+        <!--       ------ apply the gate on the device------ -->
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          how to apply the gate on the device
+        </h2>
+        <img src="" alt="" />
+        <p></p>
+      </section>
+    </div>
+
+    <!--------------- body End --------------->
+
+    <!-- -----------Footer Start----------- -->
+    <!-- Names Start-------------- -->
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+    <!-- -----------Footer End----------- -->
+
+    <script src="/docs/scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="stylesheet" href="/docs/pages/Gates.css" />
+    <!-- <script src="../../../flowbite.js"></script>
+    <script src="../../../tailwind.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+      integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates/Calculator</title>
+  </head>
+  <body>
+    <script src="/docs/pages/components/component.js"></script>
+    <my-header></my-header>
+
+    <section
+      class="w-full min-h-screen bg-gradient-to-br from-green-400 via-white to-orange-50 flex flex-col md:flex-row gap-4 p-4 md:p-6"
+    >
+      <!-- Left Sidebar -->
+      <div
+        id="left"
+        class="flex flex-col bg-gray-800 w-full md:w-60 rounded-xl shadow-md overflow-hidden"
+      >
+        <div class="text-center mt-6 mb-4">
+          <h2 class="text-2xl font-extrabold text-lime-200">Logic Lab</h2>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden px-4 mb-4">
+          <select
+            id="gate-select-mobile"
+            class="w-full bg-gray-700 text-white rounded-lg py-2 px-3 border border-gray-600 focus:border-green-400 focus:outline-none"
+          >
+            <option value="" disabled selected>Select a Gate</option>
+            <option value="AND">AND Gate</option>
+            <option value="OR">OR Gate</option>
+            <option value="NOT">NOT Gate</option>
+            <option value="NAND">NAND Gate</option>
+            <option value="NOR">NOR Gate</option>
+            <option value="XOR">XOR Gate</option>
+            <option value="XNOR">XNOR Gate</option>
+            <option value="HALF_ADDER">Half Adder</option>
+            <option value="FULL_ADDER">Full Adder</option>
+            <option value="D_FLIPFLOP">D Flip-Flop</option>
+            <option value="JK_FLIPFLOP">JK Flip-Flop</option>
+          </select>
+        </div>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:block px-2 pb-4">
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="#"
+                data-gate="AND"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >AND Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="OR"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >OR Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="NOT"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >NOT Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="NAND"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >NAND Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="NOR"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >NOR Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="XOR"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >XOR Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="XNOR"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >XNOR Gate</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="HALF_ADDER"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >Half Adder</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="FULL_ADDER"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >Full Adder</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="D_FLIPFLOP"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >D Flip-Flop</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-gate="JK_FLIPFLOP"
+                class="nav-link block px-4 py-2 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200"
+                >JK Flip-Flop</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Content -->
+      <div
+        id="right"
+        class="flex-1 bg-white bg-opacity-80 rounded-2xl shadow-xl p-6 md:p-8"
+      >
+        <h1
+          id="Gate_Title"
+          class="text-3xl font-bold mb-6 text-center text-gray-800"
+        >
+          Welcome to Logic Lab
+        </h1>
+        <div id="Calculator" class="w-full max-w-4xl mx-auto">
+          <!-- Welcome State -->
+          <div class="text-center py-12">
+            <div class="text-6xl mb-6">🔌</div>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4">
+              Choose a Logic Gate
+            </h3>
+            <p class="text-gray-600 mb-8 max-w-md mx-auto">
+              Select a logic gate or circuit from the sidebar to start exploring
+              digital logic concepts with interactive calculators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const gateDefinitions = {
+        AND: {
+          name: "AND Gate",
+          description: "Output is 1 only when both inputs are 1",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (a && b ? 1 : 0),
+        },
+        OR: {
+          name: "OR Gate",
+          description: "Output is 1 when at least one input is 1",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (a || b ? 1 : 0),
+        },
+        NOT: {
+          name: "NOT Gate",
+          description: "Output is the inverse of the input",
+          inputs: ["A"],
+          calculate: (a) => (a ? 0 : 1),
+        },
+        NAND: {
+          name: "NAND Gate",
+          description: "Output is 0 only when both inputs are 1",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (!(a && b) ? 1 : 0),
+        },
+        NOR: {
+          name: "NOR Gate",
+          description: "Output is 1 only when both inputs are 0",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (!(a || b) ? 1 : 0),
+        },
+        XOR: {
+          name: "XOR Gate",
+          description: "Output is 1 when inputs are different",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (a !== b ? 1 : 0),
+        },
+        XNOR: {
+          name: "XNOR Gate",
+          description: "Output is 1 when inputs are the same",
+          inputs: ["A", "B"],
+          calculate: (a, b) => (a === b ? 1 : 0),
+        },
+        HALF_ADDER: {
+          name: "Half Adder",
+          description: "Adds two bits, outputs sum and carry",
+          inputs: ["A", "B"],
+          calculate: (a, b) => ({
+            Sum: a !== b ? 1 : 0,
+            Carry: a && b ? 1 : 0,
+          }),
+          multiOutput: true,
+        },
+        FULL_ADDER: {
+          name: "Full Adder",
+          description: "Adds three bits including carry-in",
+          inputs: ["A", "B", "Cin"],
+          calculate: (a, b, cin) => {
+            const sum = (a + b + cin) % 2;
+            const carry = Math.floor((a + b + cin) / 2);
+            return { Sum: sum, Carry: carry };
+          },
+          multiOutput: true,
+        },
+        D_FLIPFLOP: {
+          name: "D Flip-Flop",
+          description: "Stores one bit of data on clock edge",
+          inputs: ["D", "CLK"],
+          isSequential: true,
+        },
+        JK_FLIPFLOP: {
+          name: "JK Flip-Flop",
+          description: "Universal flip-flop with J and K inputs",
+          inputs: ["J", "K", "CLK"],
+          isSequential: true,
+        },
+      };
+
+      let currentGate = null;
+      let flipFlopState = { Q: 0, Qbar: 1 };
+
+      const gateTitle = document.getElementById("Gate_Title");
+      const calculator = document.getElementById("Calculator");
+      const mobileSelect = document.getElementById("gate-select-mobile");
+      const gateLinks = document.querySelectorAll(".nav-link");
+
+      function createGateCalculator(gateKey) {
+        const gate = gateDefinitions[gateKey];
+        if (!gate) return;
+
+        currentGate = gateKey;
+        gateTitle.textContent = gate.name;
+
+        if (gate.isSequential) {
+          createSequentialInterface(gate);
+        } else {
+          createCombinatorialInterface(gate);
+        }
+
+        // Update active nav item
+        gateLinks.forEach((link) => {
+          link.classList.remove("bg-gray-700", "text-white");
+          if (link.dataset.gate === gateKey) {
+            link.classList.add("bg-gray-700", "text-white");
+          }
+        });
+      }
+
+      function createCombinatorialInterface(gate) {
+        let html = `
+      <div class="space-y-6">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p class="text-gray-700 text-center">${gate.description}</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800">Inputs</h3>
+          <div class="grid gap-4 ${
+            gate.inputs.length === 3
+              ? "grid-cols-3"
+              : gate.inputs.length === 2
+              ? "grid-cols-2"
+              : "grid-cols-1"
+          }">
+    `;
+
+        gate.inputs.forEach((inputName, index) => {
+          html += `
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">${inputName}</label>
+          <select class="gate-input w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all" data-input="${index}">
+            <option value="0">0</option>
+            <option value="1">1</option>
+          </select>
+        </div>
+      `;
+        });
+
+        html += `
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800">Output</h3>
+          <div id="output-display" class="space-y-3">
+            <!-- Output will be updated here -->
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800">Truth Table</h3>
+          <div class="overflow-x-auto">
+            ${createTruthTable(gate)}
+          </div>
+        </div>
+      </div>
+    `;
+
+        calculator.innerHTML = html;
+
+        // Add event listeners
+        document.querySelectorAll(".gate-input").forEach((input) => {
+          input.addEventListener("change", () => updateOutput(gate));
+        });
+
+        updateOutput(gate);
+      }
+
+      function createSequentialInterface(gate) {
+        calculator.innerHTML = `
+      <div class="space-y-6">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p class="text-gray-700 text-center">${gate.description}</p>
+        </div>
+        
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <p class="text-gray-700 text-center">Sequential circuits require clock signals and state management. This is a simplified representation.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800">Current State</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-white rounded-lg border">
+              <div class="text-sm text-gray-600 mb-1">Q</div>
+              <div class="text-2xl font-bold text-green-600">${flipFlopState.Q}</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg border">
+              <div class="text-sm text-gray-600 mb-1">Q̄</div>
+              <div class="text-2xl font-bold text-red-600">${flipFlopState.Qbar}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+      }
+
+      function updateOutput(gate) {
+        const inputs = Array.from(document.querySelectorAll(".gate-input")).map(
+          (input) => parseInt(input.value)
+        );
+
+        let result;
+        if (gate.inputs.length === 1) {
+          result = gate.calculate(inputs[0]);
+        } else if (gate.inputs.length === 2) {
+          result = gate.calculate(inputs[0], inputs[1]);
+        } else {
+          result = gate.calculate(inputs[0], inputs[1], inputs[2]);
+        }
+
+        const outputs = gate.multiOutput ? result : { Output: result };
+
+        let outputHTML = "";
+        Object.entries(outputs).forEach(([key, value]) => {
+          const isHigh = value === 1;
+          const bgColor = isHigh
+            ? "bg-green-100 border-green-300"
+            : "bg-gray-100 border-gray-300";
+          const textColor = isHigh ? "text-green-800" : "text-gray-600";
+
+          outputHTML += `
+        <div class="flex items-center justify-between p-4 rounded-lg border-2 ${bgColor} transition-all duration-200">
+          <span class="font-medium text-gray-700">${key}</span>
+          <span class="text-2xl font-bold ${textColor}">${value}</span>
+        </div>
+      `;
+        });
+
+        document.getElementById("output-display").innerHTML = outputHTML;
+      }
+
+      function createTruthTable(gate) {
+        const inputCount = gate.inputs.length;
+        const combinations = Math.pow(2, inputCount);
+
+        let html = `
+      <table class="w-full bg-white rounded-lg overflow-hidden shadow-sm">
+        <thead>
+          <tr class="bg-gray-100">
+    `;
+
+        // Input headers
+        gate.inputs.forEach((inputName) => {
+          html += `<th class="px-4 py-3 text-left font-semibold text-gray-700">${inputName}</th>`;
+        });
+
+        // Output headers
+        if (gate.multiOutput) {
+          html += `<th class="px-4 py-3 text-left font-semibold text-gray-700">Sum</th>`;
+          html += `<th class="px-4 py-3 text-left font-semibold text-gray-700">Carry</th>`;
+        } else {
+          html += `<th class="px-4 py-3 text-left font-semibold text-gray-700">Output</th>`;
+        }
+
+        html += `
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+    `;
+
+        // Generate truth table rows
+        for (let i = 0; i < combinations; i++) {
+          const inputs = [];
+          for (let j = inputCount - 1; j >= 0; j--) {
+            inputs.push((i >> j) & 1);
+          }
+
+          let result;
+          if (inputCount === 1) {
+            result = gate.calculate(inputs[0]);
+          } else if (inputCount === 2) {
+            result = gate.calculate(inputs[0], inputs[1]);
+          } else {
+            result = gate.calculate(inputs[0], inputs[1], inputs[2]);
+          }
+
+          const outputs = gate.multiOutput ? result : { Output: result };
+
+          html += `<tr class="hover:bg-gray-50 transition-colors">`;
+
+          // Input columns
+          inputs.forEach((input) => {
+            const cellColor =
+              input === 1 ? "text-green-600 font-semibold" : "text-gray-600";
+            html += `<td class="px-4 py-3 ${cellColor}">${input}</td>`;
+          });
+
+          // Output columns
+          Object.values(outputs).forEach((output) => {
+            const cellColor =
+              output === 1 ? "text-green-600 font-semibold" : "text-gray-600";
+            html += `<td class="px-4 py-3 ${cellColor}">${output}</td>`;
+          });
+
+          html += `</tr>`;
+        }
+
+        html += `
+        </tbody>
+      </table>
+    `;
+
+        return html;
+      }
+
+      // Event listeners
+      if (mobileSelect) {
+        mobileSelect.addEventListener("change", (e) => {
+          const value = e.target.value;
+          if (value) createGateCalculator(value);
+        });
+      }
+
+      gateLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const gateKey = link.dataset.gate;
+          createGateCalculator(gateKey);
+        });
+      });
+    </script>
+
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+  </body>
+  <script src="/docs/scripts/script.js"></script>
+</html>

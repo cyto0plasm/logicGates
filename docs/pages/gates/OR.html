@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates</title>
+    <script src="/docs/pages/components/component.js"></script>
+  </head>
+  <body>
+    <!--------------- navbar Start --------------->
+    <script src="../component.js"></script>
+
+    <my-header></my-header>>
+
+    <!--------------- navbar End --------------->
+    <!--------------- body Start --------------->
+    <div class="container mx-auto">
+      <section
+        id="sec"
+        class="mx-auto flex flex-col lg:w-[70%] md:w-[90%] sm:w-[95%]"
+      >
+        <h1 class="text-[40px] font-bold my-3 text-center">OR</h1>
+        <!------------ definition ------------>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          OR gate is the type of Logic Gate. Let’s suppose in binary numbers 0
+          and 1, 0 is low and 1 is high. So when at least one of the provided
+          inputs is high then the output is high otherwise it’s low.
+        </p>
+
+        <div
+          class="mx-auto w-[50%] h-auto px-5 py-5 bg-slate-100 shadow-lg rounded-sm"
+        >
+          <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+            1. If inputs are A= 0, B = 1, and C = 0 here Input B is high so the
+            overall output will be high.
+          </p>
+          <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+            2. If Input B = 0 then all of the inputs are low so the output will
+            also be low means 0.
+          </p>
+        </div>
+        <div class="hr"></div>
+
+        <!------------- diagram ------------->
+
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Symbol
+        </h2>
+        <img
+          class="mx-auto"
+          width="400px"
+          src="../../img/Gates/g/OR.png"
+          alt="Diagram"
+        />
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          the Symbol of OR gate, A and B represent the two inputs,x is the
+          output of those two inputs . <br />
+          the value of those inputs can be 1 for (on), 0 for(off).
+        </p>
+
+        <!--         <div class="hr"></div>
+ -->
+        <!------------ Circuit ------------>
+        <!-- <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          JK Flip-Flop Circuit
+        </h2>
+
+        <div class="flex justify-center">
+          <img
+            class="my-2 w-[32rem]"
+            src="/img/Gates/flip-flop/JK-FLIP-FLOP-Diagram1.png"
+            alt="Circuit"
+          />
+        </div>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          JK Flip Flop is an improved version of SR flip flop where the
+          undefined state of SR Flip Flop is eliminated by providing feedback
+        </p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          In a circuit “set”, the bottom NAND gate interrupts the J input coming
+          from the “0” position of Q’. In the “RESET” state, the top NAND gate
+          interrupts the K input coming from the 0 positions of Q. We can use Q
+          and Q’ to control the input because they are always different. The
+          flip flop is toggled according to the truth table when both inputs “J”
+          and “K” are set to 1.
+        </p> -->
+
+        <!-- ---------Truth Table--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Truth Table
+        </h2>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+          <table
+            class="w-[600px] mx-auto text-center text-[25px] text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-[30px] text-gray-700 uppercase dark:text-gray-400"
+            >
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  A
+                </th>
+                <th scope="col" class="px-6 py-3 text-white dark:bg-gray-700">
+                  B
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  Output
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-500">
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          This is the simplest Gate You will ever encounter ,its rule is as
+          simple ias this: When one or more of the inputs is high (1) the output
+          will be high (1).
+        </p>
+
+        <!-- ---------Equation--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Equation
+        </h2>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          The characteristic equation of OR Gate depends on two inputs
+          (A,B),those inputs Generates the output:
+        </p>
+
+        <h3 class="text-[1.2rem] text-center bg-slate-300 my-4">A + B = X</h3>
+
+        <div class="hr"></div>
+        <!--       ------ apply the gate on the device------ -->
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          how to apply the gate on the device
+        </h2>
+        <img src="" alt="" />
+        <p></p>
+      </section>
+    </div>
+
+    <!--------------- body End --------------->
+
+    <!-- -----------Footer Start----------- -->
+    <!-- Names Start-------------- -->
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+    <!-- -----------Footer End----------- -->
+
+    <script src="/docs/scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/docs/styles/styles.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+
+    <link rel="icon" type="image/x-icon" href="/docs/assets/img/favicon.png" />
+    <title>Logic Gates</title>
+    <script src="/docs/pages/components/component.js"></script>
+  </head>
+  <body>
+    <!--------------- navbar Start --------------->
+    <my-header></my-header>
+    <!--------------- navbar End --------------->
+    <!--------------- body Start --------------->
+
+    <div class="container mx-auto">
+      <section
+        id="sec"
+        class="mx-auto flex flex-col lg:w-[70%] md:w-[90%] sm:w-[95%]"
+      >
+        <h1 class="text-[40px] font-bold my-3 text-center">AND</h1>
+        <!------------ definition ------------>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          AND gate is the fundamental logic gate that executes the logical
+          multiplication of binary input. The AND operation is carried out in
+          the same way as standard multiplications of 1s and 0s. An AND gate is
+          a logic circuit that performs AND operations on the input of the
+          circuit. When all the inputs are 1, the AND Gate outputs 1, otherwise
+          it outputs 0. A dot (.) denotes the AND operation.
+        </p>
+        <div class="hr"></div>
+
+        <!------------- diagram ------------->
+
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Symbol
+        </h2>
+        <img
+          class="mx-auto"
+          width="400px"
+          src="/docs/assets/img/gates/g/AND.png"
+          alt="Diagram"
+        />
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1">
+          the Symbol of AND gate, A and B represent the two inputs,x is the
+          output of those two inputs . <br />
+          the value of those inputs can be 1 for (on), 0 for(off).
+        </p>
+
+        <!--         <div class="hr"></div>
+ -->
+        <!------------ Circuit ------------>
+        <!-- <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          JK Flip-Flop Circuit
+        </h2>
+
+        <div class="flex justify-center">
+          <img
+            class="my-2 w-[32rem]"
+            src="/img/Gates/flip-flop/JK-FLIP-FLOP-Diagram1.png"
+            alt="Circuit"
+          />
+        </div>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          JK Flip Flop is an improved version of SR flip flop where the
+          undefined state of SR Flip Flop is eliminated by providing feedback
+        </p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-2">
+          In a circuit “set”, the bottom NAND gate interrupts the J input coming
+          from the “0” position of Q’. In the “RESET” state, the top NAND gate
+          interrupts the K input coming from the 0 positions of Q. We can use Q
+          and Q’ to control the input because they are always different. The
+          flip flop is toggled according to the truth table when both inputs “J”
+          and “K” are set to 1.
+        </p> -->
+
+        <!-- ---------Truth Table--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Truth Table
+        </h2>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+          <table
+            class="w-[600px] mx-auto text-center text-[25px] text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-[30px] text-gray-700 uppercase dark:text-gray-400"
+            >
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  A
+                </th>
+                <th scope="col" class="px-6 py-3 text-white dark:bg-gray-700">
+                  B
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-3 font-medium text-white dark:bg-gray-700"
+                >
+                  Output
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-500">
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">0</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">0</td>
+                <td class="px-6 py-4 font-medium text-black">0</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-200">
+                <td class="px-6 py-4 font-medium text-black">1</td>
+                <td class="px-6 py-4 text-black">1</td>
+                <td class="px-6 py-4 font-medium text-black">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify"></p>
+        <p class="text-[1.3rem] px-[1.2rem] text-justify my-1 lg:mx-[15rem]">
+          In the given truth table When both inputs A and B are 0, the output is
+          0.If either input A or B is 0 while the other is 1,the output is
+          0.Only when both inputs A and B are 1,the output is 1.This behavior
+          reflects the AND gate’s logical operation, where the output is true
+          (1) only when all inputs are true (1).
+        </p>
+
+        <!-- ---------Equation--------- -->
+        <div class="hr"></div>
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          Equation
+        </h2>
+        <p class="text-[1.2rem] px-[1.2rem] text-justify">
+          The characteristic equation of AND Gate depends on two inputs
+          (A,B),those inputs Generates the output:
+        </p>
+
+        <h3 class="text-[1.2rem] text-center bg-slate-300 my-4">A . B = X</h3>
+
+        <div class="hr"></div>
+        <!--       ------ apply the gate on the device------ -->
+        <h2
+          class="text-[1.8rem] text-center my-2 dark:bg-[#273430] text-white rounded-md px-[1.4rem] py-[1rem]"
+        >
+          how to apply the gate on the device
+        </h2>
+        <img src="" alt="" />
+        <p></p>
+      </section>
+    </div>
+
+    <!--------------- body End --------------->
+
+    <!-- -----------Footer Start----------- -->
+    <!-- Names Start-------------- -->
+    <script src="/docs/pages/components/component-footer.js"></script>
+    <my-footer></my-footer>
+    <!-- -----------Footer End----------- -->
+
+    <script src="/docs/scripts/script.js"></script>
+  </body>
+</html>
