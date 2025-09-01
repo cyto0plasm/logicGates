@@ -17,16 +17,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script>
+      const ROOT =
+        window.location.hostname === "localhost" ? "/" : "/logicGates/";
+    </script>
+    <link rel="icon" type="image/x-icon" href="${ROOT}assets/img/favicon.png" />
     <title>Logic Gates/Project</title>
   </head>
   <body>
-    <script src="/pages/components/component.js"></script>
+    <script src="${ROOT}pages/components/component.js"></script>
     <my-header></my-header>
 
-    <script src="/pages/components/component-footer.js"></script>
+    <script src="${ROOT}pages/components/component-footer.js"></script>
     <my-footer></my-footer>
   </body>
-  <script src="/scripts/script.js"></script>
+  <script src="${ROOT}scripts/script.js"></script>
 </html>
