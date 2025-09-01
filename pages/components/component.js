@@ -29,12 +29,12 @@
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2"
       >
         <a
-          href="/docs/index.html"
+          href="/index.html"
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
             id="logo"
-            src="/docs/assets/img/logo.ps.png"
+            src="/assets/img/logo.ps.png"
             alt="New Era Logo"
             width="70"
             height="70"
@@ -77,7 +77,7 @@
           >
             <li>
               <a
-                href="/docs/index.html"
+                href="/index.html"
                 class="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
                 >Home</a
@@ -90,7 +90,7 @@
                 id="gates-link"
                 >Gates
                 <img
-                  src="/docs/assets/img/down-arrow.png"
+                  src="/assets/img/down-arrow.png"
                   width="30px"
                   style="display: inline; filter: invert(1)"
                   alt=""
@@ -103,21 +103,21 @@
               >
                 <li>
                   <a
-                    href="/docs/pages/page/Gates.html"
+                    href="/pages/page/Gates.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Introduction</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/docs/pages/page/calculator.html"
+                    href="/pages/page/calculator.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Gates Calculator</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/docs/pages/page/board.html"
+                    href="/pages/page/board.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Gates Board</a
                   >
@@ -126,14 +126,14 @@
             </li>
             <li>
               <a
-                href="/docs/pages/page/Project.html"
+                href="/pages/page/Project.html"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Project</a
               >
             </li>
             <li>
               <a
-                href="/docs/pages/page/Team.html"
+                href="/pages/page/Team.html"
                 class="block py-2 px-3 text-grayf-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Team</a
               >
