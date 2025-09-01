@@ -21,7 +21,7 @@
         >
           <img
             id="logo"
-            src="assets/img/logo.ps.png"
+            src="${ROOT}assets/img/logo.ps.png"
             alt="New Era Logo"
             width="70"
             height="70"
