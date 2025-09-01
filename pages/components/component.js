@@ -34,7 +34,7 @@
         >
           <img
             id="logo"
-            src="/assets/img/logo.ps.png"
+            src="assets/img/logo.ps.png"
             alt="New Era Logo"
             width="70"
             height="70"
@@ -90,7 +90,7 @@
                 id="gates-link"
                 >Gates
                 <img
-                  src="/assets/img/down-arrow.png"
+                  src="assets/img/down-arrow.png"
                   width="30px"
                   style="display: inline; filter: invert(1)"
                   alt=""
