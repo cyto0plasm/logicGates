@@ -68,7 +68,7 @@
 <img width="80px" height="80px" src="${ROOT}../assets/img/logo.ps.png" alt="Logo" />
         <p class="text-gray-600 dark:text-gray-400">
               © ${new Date().getFullYear()} 
-              <a href="/index.html" class="text-blue-600 dark:text-blue-400 hover:underline">Logical Gates</a>. 
+              <a href="index.html" class="text-blue-600 dark:text-blue-400 hover:underline">Logical Gates</a>. 
               All Rights Reserved.
             </p>
       <div class="flex flex-row justify-around">
