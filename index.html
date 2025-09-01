@@ -29,6 +29,14 @@
     />
 
     <!-- Tailwind Config -->
+    <script>
+      const repo = "logicGates";
+      const isLocal =
+        location.hostname === "127.0.0.1" || location.hostname === "localhost";
+      const base = document.createElement("base");
+      base.href = isLocal ? "/" : `/${repo}/`;
+      document.head.appendChild(base);
+    </script>
 
     <title>Logic Gates Learning Kit | Free Digital Electronics Tutorials</title>
   </head>
