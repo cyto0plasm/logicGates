@@ -1,25 +1,12 @@
 (() => {
-  // Detect root from this script's location: /<root>/components/header.js -> "/<root>/"
-  // const cs = document.currentScript;
-  // let ROOT = "/";
+  // figure out base path automatically
+  let ROOT = "/";
+  const path = window.location.pathname.split("/").filter(Boolean);
 
-  // if (cs?.dataset?.root) {
-  //   // Manual override via <script ... data-root="/your-repo/">
-  //   ROOT = cs.dataset.root.endsWith("/")
-  //     ? cs.dataset.root
-  //     : cs.dataset.root + "/";
-  // } else if (cs?.src) {
-  //   try {
-  //     const url = new URL(cs.src, window.location.href);
-  //     // e.g. "/your-repo/components/header.js" -> ["your-repo","components","header.js"]
-  //     const parts = url.pathname.split("/").filter(Boolean);
-  //     // Drop last 2 segments ("components","header.js") -> "/your-repo/"
-  //     ROOT =
-  //       "/" + parts.slice(0, Math.max(0, parts.length - 2)).join("/") + "/";
-  //   } catch (_) {
-  //     ROOT = "/";
-  //   }
-  // }
+  // If hosted on GitHub Pages, add repo name as root
+  if (window.location.hostname.includes("github.io") && path.length > 0) {
+    ROOT = `/${path[0]}/`;
+  }
 
   class MyHeader extends HTMLElement {
     connectedCallback() {
@@ -29,7 +16,7 @@
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2"
       >
         <a
-          href="index.html"
+          href="${ROOT}index.html"
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
@@ -77,7 +64,7 @@
           >
             <li>
               <a
-                href="index.html"
+                href="${ROOT}index.html"
                 class="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
                 >Home</a
@@ -85,7 +72,7 @@
             </li>
             <li class="relative">
               <a
-                href="#"
+                href="${ROOT}#"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 id="gates-link"
                 >Gates
@@ -103,21 +90,21 @@
               >
                 <li>
                   <a
-                    href="pages/page/Gates.html"
+                    href="${ROOT}pages/page/Gates.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Introduction</a
                   >
                 </li>
                 <li>
                   <a
-                    href="pages/page/calculator.html"
+                    href="${ROOT}pages/page/calculator.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Gates Calculator</a
                   >
                 </li>
                 <li>
                   <a
-                    href="pages/page/board.html"
+                    href="${ROOT}pages/page/board.html"
                     class="block h-[35px] py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >Gates Board</a
                   >
@@ -126,14 +113,14 @@
             </li>
             <li>
               <a
-                href="pages/page/Project.html"
+                href="${ROOT}pages/page/Project.html"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Project</a
               >
             </li>
             <li>
               <a
-                href="pages/page/Team.html"
+                href="${ROOT}pages/page/Team.html"
                 class="block py-2 px-3 text-grayf-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Team</a
               >
